@@ -25,4 +25,12 @@ export class PhotoService {
   getPhoto(id: string) {
     return this.http.get<Photo>(this.URI + id)
   }
+
+  updatePhoto(id: string, title: string, description: string) {
+    return this.http.put(this.URI + id, {title, description})
+  }
+
+  deletePhoto(id: string) {
+    return this.http.delete(this.URI + id)
+  }
 }
